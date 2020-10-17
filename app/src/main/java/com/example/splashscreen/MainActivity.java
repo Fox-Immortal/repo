@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private View rightBox;
     private ImageView sheild;
     private TextView weGuideYou;
+    private View sheildBox;
     Interpolator interpolator = new OvershootInterpolator();
 
     @Override
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         rightBox = findViewById(R.id.rightBox);
         sheild = findViewById(R.id.sheildx);
         weGuideYou = findViewById(R.id.weGuideYoux);
+        sheildBox = findViewById(R.id.sheildBox);
 //        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 //        getWindow().setStatusBarColor(Color.argb(1,128, 172, 239));
@@ -79,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 refugees.setVisibility(View.VISIBLE);
-                weGuideYou.setVisibility(View.VISIBLE);
                 sheild.setVisibility(View.VISIBLE);
+                weGuideYou.setVisibility(View.VISIBLE);
                 leftWall.animate().setDuration(0).translationYBy(732);
                 rightWall.animate().setDuration(0).translationYBy(732);
                 move_sideways();
@@ -95,12 +97,46 @@ public class MainActivity extends AppCompatActivity {
     }
     public void move_sideways() {
         Animation move_sideways_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right);
-        Animation move_sideways_right_box = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right_box);
         Animation move_sideways_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left);
-        Animation move_sideways_left_box = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left_box);
         leftWall.startAnimation(move_sideways_right);
         rightWall.startAnimation(move_sideways_left);
-        leftBox.startAnimation(move_sideways_left_box);
-        rightBox.startAnimation(move_sideways_right_box);
+        leftBox.startAnimation(move_sideways_left);
+        rightBox.startAnimation(move_sideways_right);
+        move_sideways_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                move_sheild_box();
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+    }
+    public void move_sheild_box() {
+        Animation move_sheild_box = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sheild_box);
+        move_sheild_box.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                sheildBox.animate().setDuration(0).translationXBy(210);
+                move_sheild();
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        sheildBox.startAnimation(move_sheild_box);
+    }
+    public void move_sheild() {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sheild);
+        Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sheild);
+        sheild.startAnimation(animation);
+        sheildBox.startAnimation(animation2);
     }
 }
