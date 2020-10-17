@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 //        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 //        getWindow().setStatusBarColor(Color.argb(1,128, 172, 239));
-        move_top();
+//        move_top();
         move_down();
-
+        move_top();
     }
     public void move_bottom() {
         Animation move_bottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_bottom);
