@@ -2,7 +2,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillAfter="true">
     <translate
-        android:fromYDelta="0"
-        android:toYDelta="-200"
+        android:fromXDelta="0"
+        android:toXDelta="-282"
         android:duration="4000" />
 </set>

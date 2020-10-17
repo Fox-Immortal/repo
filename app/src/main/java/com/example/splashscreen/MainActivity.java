@@ -33,13 +33,12 @@ public class MainActivity extends AppCompatActivity {
         roof = findViewById(R.id.roofx);
         leftWall = findViewById(R.id.leftWallx);
         rightWall = findViewById(R.id.rightWallx);
-        refugees = findViewById(R.id.refugees);
+        refugees = findViewById(R.id.refugeesx);
         leftBox = findViewById(R.id.leftBox);
         rightBox = findViewById(R.id.rightBox);
 //        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 //        getWindow().setStatusBarColor(Color.argb(1,128, 172, 239));
-        move_sideways();
         move_top();
         move_down();
 
@@ -74,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void onAnimationEnd(Animation animation) {
-
+                refugees.setVisibility(View.VISIBLE);
+                leftWall.animate().setDuration(0).translationYBy(732);
+                rightWall.animate().setDuration(0).translationYBy(732);
+                move_sideways();
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
@@ -89,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
         Animation move_sideways_right2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right);
         Animation move_sideways_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left);
         Animation move_sideways_left2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left);
-//        leftBox.startAnimation(move_sideways_left);
-//        rightBox.startAnimation(move_sideways_right);
         leftWall.startAnimation(move_sideways_right2);
-//        rightWall.startAnimation(move_sideways_right2);
+        rightWall.startAnimation(move_sideways_left2);
+        leftBox.startAnimation(move_sideways_left);
+        rightBox.startAnimation(move_sideways_right);
     }
 }
