@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView refugees;
     private View leftBox;
     private View rightBox;
+    private ImageView sheild;
+    private TextView weGuideYou;
     Interpolator interpolator = new OvershootInterpolator();
 
     @Override
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         refugees = findViewById(R.id.refugeesx);
         leftBox = findViewById(R.id.leftBox);
         rightBox = findViewById(R.id.rightBox);
+        sheild = findViewById(R.id.sheildx);
+        weGuideYou = findViewById(R.id.weGuideYoux);
 //        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 //        getWindow().setStatusBarColor(Color.argb(1,128, 172, 239));
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public void move_down() {
         Animation move_down = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_down);
         Animation move_down2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_down);
+        Animation move_down3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_down);
         move_down.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -74,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 refugees.setVisibility(View.VISIBLE);
+                weGuideYou.setVisibility(View.VISIBLE);
+                sheild.setVisibility(View.VISIBLE);
                 leftWall.animate().setDuration(0).translationYBy(732);
                 rightWall.animate().setDuration(0).translationYBy(732);
                 move_sideways();
@@ -82,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationRepeat(Animation animation) {
             }
         });
-        roof.startAnimation(move_down);
+        roof.startAnimation(move_down3);
         leftWall.startAnimation(move_down2);
         rightWall.startAnimation(move_down);
     }
