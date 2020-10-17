@@ -46,20 +46,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="540dp"
-        android:visibility="invisible"
+        android:layout_marginBottom="552dp"
         android:fontFamily="@font/aliceregular"
         android:text="@string/refugees"
         android:textColor="#FFFFFF"
         android:textSize="55sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/rightBox"
-        android:layout_width="184dp"
+        android:layout_width="183dp"
         android:layout_height="100dp"
         android:layout_marginBottom="520dp"
         android:alpha="1"
@@ -69,7 +69,7 @@
 
     <View
         android:id="@+id/leftBox"
-        android:layout_width="185.5dp"
+        android:layout_width="185dp"
         android:layout_height="100dp"
         android:layout_marginBottom="520dp"
         android:alpha="1"
@@ -77,33 +77,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/weGuideYoux"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="69dp"-->
-    <!--        android:layout_marginEnd="87dp"-->
-    <!--        android:layout_marginBottom="425dp"-->
-    <!--        android:fontFamily="@font/aliceregular"-->
-    <!--        android:text="@string/we_guide_you"-->
-    <!--        android:textColor="#FFFFFF"-->
-    <!--        android:textSize="30sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="@+id/refugeesx"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/rightWallx" />-->
+    <TextView
+        android:id="@+id/weGuideYoux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="516dp"
+        android:fontFamily="@font/aliceregular"
+        android:text="@string/we_guide_you"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/sheildx"-->
-    <!--        android:layout_width="80dp"-->
-    <!--        android:layout_height="66dp"-->
-    <!--        android:layout_marginStart="50dp"-->
-    <!--        android:layout_marginEnd="68dp"-->
-    <!--        android:layout_marginBottom="410dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.756"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/weGuideYoux"-->
-    <!--        app:srcCompat="@drawable/usheild" />-->
+    <ImageView
+        android:id="@+id/sheildx"
+        android:layout_width="80dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="488dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/weGuideYoux"
+        app:srcCompat="@drawable/usheild" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

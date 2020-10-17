@@ -88,12 +88,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void move_sideways() {
         Animation move_sideways_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right);
-        Animation move_sideways_right2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right);
+        Animation move_sideways_right_box = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_right_box);
         Animation move_sideways_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left);
-        Animation move_sideways_left2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left);
-        leftWall.startAnimation(move_sideways_right2);
-        rightWall.startAnimation(move_sideways_left2);
-        leftBox.startAnimation(move_sideways_left);
-        rightBox.startAnimation(move_sideways_right);
+        Animation move_sideways_left_box = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_sideways_left_box);
+        leftWall.startAnimation(move_sideways_right);
+        rightWall.startAnimation(move_sideways_left);
+        leftBox.startAnimation(move_sideways_left_box);
+        rightBox.startAnimation(move_sideways_right_box);
     }
 }
